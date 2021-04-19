@@ -6,7 +6,7 @@ import PageNotFound from "./PageNotFound";
 
 export default function Detail(props) {
   const { id } = useParams();
-  const { sku, setSku } = useState("");
+  const [ sku, setSku ] = useState("");
   const { data: product, error, loading } = useFetch(`products/${id}`);
   const navigate = useNavigate();
 
