@@ -8,7 +8,7 @@ import Cart from "./Cart";
 import Detail from "./Detail";
 
 export default function App() {
-  const { cart, setCart } = useState([]);
+  const [cart, setCart] = useState([]);
 
   function addToCart(id, sku) {
     setCart((items) => {

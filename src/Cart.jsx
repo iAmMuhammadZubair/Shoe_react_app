@@ -12,7 +12,7 @@ export default function Cart(props /* { cart, updateQuantity } */) {
     const { price, name, image, skus } = products.find(
       (p) => p.id === parseInt(id)
     );
-    const { size } = skus.find((s) => s.sku === sku);
+    const [size] = skus.find((s) => s.sku === sku);
 
     return (
       <li key={sku} className="cart-item">
