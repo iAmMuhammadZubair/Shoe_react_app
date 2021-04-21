@@ -9,7 +9,6 @@ export default function Detail(props) {
   const [sku, setSku] = useState("");
   const { data: product, error, loading } = useFetch(`products/${id}`);
   const navigate = useNavigate();
-
   if (loading) return <Spinner />;
   if (!product) return <PageNotFound />;
   if (error) throw error;
@@ -33,7 +32,7 @@ export default function Detail(props) {
           className="btn btn-primary"
           disabled={!sku}
           onClick={() => {
-            props.addToCart(product.id, product.sku);
+            props.addToCart(id, sku);
             navigate("/cart");
           }}
         >
